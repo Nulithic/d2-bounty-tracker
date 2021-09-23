@@ -19,7 +19,8 @@ const Tracker = () => {
       let url = String(document.location);
       let params = new URL(url).searchParams;
       let code = String(params.get("code"));
-      localStorage.setItem("tokens", String(await getTokens(code)));
+      let tokens = JSON.stringify(await getTokens(code));
+      localStorage.setItem("tokens", tokens);
     };
     saveTokens();
   }, []);
