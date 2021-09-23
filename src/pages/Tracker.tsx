@@ -19,16 +19,21 @@ const Tracker = () => {
       let url = String(document.location);
       let params = new URL(url).searchParams;
       let code = String(params.get("code"));
-      let tokens = JSON.stringify(await getTokens(code));
+      let res = await getTokens(code);
+      let tokens = JSON.stringify(res.data);
       localStorage.setItem("tokens", tokens);
     };
     saveTokens();
   }, []);
 
   const currentUser = async () => {
-    const tokens = String(localStorage.getItem("tokens"));
-    const tokenObject: Tokens = JSON.parse(tokens);
-    console.log(await getCurrentBungieNetUser(tokenObject.access_token));
+    const tokens = localStorage.getItem("tokens");
+    if (tokens !== null) {
+      const tokenObject: Tokens = JSON.parse(tokens);
+      console.log(await getCurrentBungieNetUser(tokenObject.access_token));
+    } else {
+      alert("No tokens!");
+    }
   };
 
   return (
