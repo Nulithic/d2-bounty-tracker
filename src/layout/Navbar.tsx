@@ -63,7 +63,7 @@ const Navbar = () => {
           direction={["column", "column", "row", "row"]}
           pt={[4, 4, 0, 0]}
         >
-          <MenuItem to="/Login">Login</MenuItem>
+          <MenuItem to="https://www.bungie.net/en/OAuth/Authorize?client_id=34710&response_type=code">Login</MenuItem>
           <ColorModeSwitcher justifySelf="flex-end" />
         </Stack>
       </Box>
