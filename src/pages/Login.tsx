@@ -1,12 +1,7 @@
 import React from "react";
 import { Button, Box, Flex } from "@chakra-ui/react";
 
-import { VerifyAccessToken } from "../helpers";
-
-const Home = () => {
-  const verifyAccessToken = VerifyAccessToken();
-  if (verifyAccessToken) window.location.replace("/tracker");
-
+const Login = () => {
   return (
     <Flex h="full" alignItems="center" justifyContent="center">
       <Box color="white">
@@ -18,4 +13,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

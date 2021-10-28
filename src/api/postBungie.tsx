@@ -15,4 +15,18 @@ const getTokens = (code: string) => {
   });
 };
 
-export { getTokens };
+const refreshTokens = (token: string) => {
+  const data = {
+    grant_type: "refresh_token",
+    refresh_token: token,
+  };
+
+  return axios.post("https://www.bungie.net/Platform/App/OAuth/Token/", qs.stringify(data), {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: "Basic " + btoa("34710:" + process.env.REACT_APP_BUNGIE_API_CLIENT_SECRET),
+    },
+  });
+};
+
+export { getTokens, refreshTokens };

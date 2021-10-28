@@ -10,7 +10,7 @@ export const App = () => (
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Tracker" component={Tracker} />
+        <Route exact path="/tracker" component={Tracker} />
       </Switch>
     </Layout>
   </BrowserRouter>

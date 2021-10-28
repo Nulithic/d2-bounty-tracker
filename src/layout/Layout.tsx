@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 const Layout: FC = ({ children }) => {
   return (
-    <Box bgColor="gray.800">
+    <Box>
       <Navbar />
       <Grid minH="100vh">
         <Box mt={24} mb={5} mx={5}>
